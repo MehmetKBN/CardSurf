@@ -1,9 +1,9 @@
 // Card content data
 const cardData = [
-    { emoji: '🌟', name: 'Star Card', text: 'Swipe to see what happens!' },
-    { emoji: '🎮', name: 'Game Card', text: 'Having fun?' },
-    { emoji: '🎨', name: 'Art Card', text: 'Express yourself!' },
-    { emoji: '💋', name: 'Hot Card', text: 'Catch It!' },
+    { image: 'https://images.pexels.com/photos/127723/pexels-photo-127723.jpeg', name: 'Star Card', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent neque elit, dictum id malesuada nec, sagittis sit amet ligula. Aliquam non consectetur odio, non rutrum ipsum. Sed eu massa tincidunt, laoreet orci sed, dictum nulla. Nam erat eros, malesuada at justo ac, semper tristique sem. Vivamus eros dui, pretium ut nisi a, molestie vulputate tortor. Nullam dignissim mattis metus, quis egestas eros. Maecenas a consequat nisi. Phasellus risus lorem, luctus nec lacus ut, iaculis ultricies nam.' },
+    { image: '🎮', name: 'Game Card', text: 'Having fun?' },
+    { image: '🎨', name: 'Art Card', text: 'Express yourself!' },
+    { image: '💋', name: 'Hot Card', text: 'Catch It!' },
     // Add more cards as needed
 ];
 
@@ -31,7 +31,7 @@ class CardGame {
     }
 
     updateCardContent(data) {
-        this.cardElement.querySelector('.emoji').textContent = data.emoji;
+        this.cardElement.querySelector('.image').src = data.image;
         this.cardElement.querySelector('.name').textContent = data.name;
         this.cardElement.querySelector('.text').textContent = data.text;
     }
