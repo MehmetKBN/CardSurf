@@ -76,7 +76,7 @@ class CardGame {
         this.cardElement.style.transition = 'transform 0.3s ease';
     
         // Check if the card was actually dragged before changing it
-        if (this.hasMoved && Math.abs(this.currentX) > 100) {
+        if (this.hasMoved && Math.abs(this.currentX) > 120) {
             const direction = this.currentX > 0 ? 'right' : 'left';
             this.swipeCard(direction);
         } else {
