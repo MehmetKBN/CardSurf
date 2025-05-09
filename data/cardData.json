@@ -1,0 +1,22 @@
+[
+    {
+        "image": "https://images.pexels.com/photos/127723/pexels-photo-127723.jpeg",
+        "name": "Star Card",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent neque elit, dictum id malesuada nec, sagittis sit amet ligula."
+    },
+    {
+        "image": "",
+        "name": "Game Card",
+        "text": "Having fun?"
+    },
+    {
+        "image": "",
+        "name": "Art Card",
+        "text": "Express yourself!"
+    },
+    {
+        "image": "",
+        "name": "Hot Card",
+        "text": "Catch It!"
+    }
+]

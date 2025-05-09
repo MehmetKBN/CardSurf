@@ -1,12 +1,3 @@
-// Card content data
-const cardData = [
-    { image: 'https://images.pexels.com/photos/127723/pexels-photo-127723.jpeg', name: 'Star Card', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent neque elit, dictum id malesuada nec, sagittis sit amet ligula. Aliquam non consectetur odio, non rutrum ipsum. Sed eu massa tincidunt, laoreet orci sed, dictum nulla. Nam erat eros, malesuada at justo ac, semper tristique sem. Vivamus eros dui, pretium ut nisi a, molestie vulputate tortor. Nullam dignissim mattis metus, quis egestas eros. Maecenas a consequat nisi. Phasellus risus lorem, luctus nec lacus ut, iaculis ultricies nam.' },
-    { image: '🎮', name: 'Game Card', text: 'Having fun?' },
-    { image: '🎨', name: 'Art Card', text: 'Express yourself!' },
-    { image: '💋', name: 'Hot Card', text: 'Catch It!' },
-    // Add more cards as needed
-];
-
 class CardGame {
     constructor() {
         this.currentCardIndex = 0;
@@ -15,19 +6,34 @@ class CardGame {
         this.startX = 0;
         this.currentX = 0;
         this.hasMoved = false;
+        this.cardData = [];
 
-
-        this.initializeCard();
+        this.loadCardData();  // Veriyi yüklemek için yeni bir metod ekliyoruz
         this.setupEventListeners();
     }
 
+    // JSON verisini yükle
+    loadCardData() {
+        fetch('data/cardData.json')  // Veriyi JSON dosyasından al
+            .then(response => response.json())
+            .then(data => {
+                this.cardData = data;  // Kart verisini yükle
+                this.initializeCard();  // Kartı başlat
+            })
+            .catch(error => {
+                console.error('Veri yüklenirken hata oluştu:', error);
+            });
+    }
+
     initializeCard() {
-        const cardData = this.getCurrentCardData();
-        this.updateCardContent(cardData);
+        if (this.cardData.length > 0) {
+            const cardData = this.getCurrentCardData();
+            this.updateCardContent(cardData);
+        }
     }
 
     getCurrentCardData() {
-        return cardData[this.currentCardIndex % cardData.length];
+        return this.cardData[this.currentCardIndex % this.cardData.length];
     }
 
     updateCardContent(data) {
@@ -48,7 +54,6 @@ class CardGame {
         this.cardElement.addEventListener('mouseup', () => this.handleDragEnd());
         this.cardElement.addEventListener('mouseleave', () => this.handleDragCancel());
         this.cardElement.addEventListener('touchleave', () => this.handleDragCancel());
-
     }
 
     handleDragStart(e) {
@@ -75,7 +80,7 @@ class CardGame {
         this.isDragging = false;
         this.cardElement.style.transition = 'transform 0.3s ease';
     
-        // Check if the card was actually dragged before changing it
+        // Kartın hareket edip etmediğini kontrol et
         if (this.hasMoved && Math.abs(this.currentX) > 120) {
             const direction = this.currentX > 0 ? 'right' : 'left';
             this.swipeCard(direction);
@@ -102,7 +107,7 @@ class CardGame {
     }
 }
 
-// Initialize the game when the DOM is loaded
+// DOM tamamen yüklendiğinde oyunu başlat
 document.addEventListener('DOMContentLoaded', () => {
     new CardGame();
 });
