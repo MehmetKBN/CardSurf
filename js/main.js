@@ -31,6 +31,8 @@ class CardGame {
     constructor() {
         this.currentCardIndex = 0;
         this.cardElement = document.getElementById('current-card');
+        this.cardContainerElement = document.getElementById('card-container');
+        this.reqsContainerElement = document.getElementById('requirements');
         this.isDragging = false;
         this.startX = 0;
         this.currentX = 0;
@@ -124,7 +126,83 @@ class CardGame {
         this.currentX = deltaX;
 
         this.cardElement.style.transform = `translateX(${deltaX}px) rotate(${deltaX * 0.1}deg)`;
+
+        if (this.currentX > 120) {
+            this.cardContainerElement.style.backgroundColor = '#6FCF97';
+            this.showVisualEffects("positive");
+            this.writeRequirements("positive");
+        }
+        else if (this.currentX < -120) {
+            this.cardContainerElement.style.backgroundColor = '#EB5757';
+            this.showVisualEffects("negative");
+            this.writeRequirements("negative");
+        }
+        else {
+            this.cardContainerElement.style.backgroundColor = 'transparent';
+            this.updateStatsDisplay();
+            
+            if (this.currentX > 0) {
+                this.writeRequirements("positive");
+            } else if (this.currentX < 0) {
+                this.writeRequirements("negative");
+            } else {
+                this.writeRequirements("clear");
+            }
+        }
+
     }
+
+    showVisualEffects(direction) {
+        const currentCard = this.getCurrentCardData();
+        const effects = direction === "positive" ? currentCard.positive.effects : currentCard.negative.effects;
+
+        // Her stat için geçici efektleri göster
+        for (const stat in effects) {
+            const effectValue = effects[stat];
+            const statElement = document.getElementById(`stat-${stat}`);
+
+            if (statElement) {
+                // Geçici etiketi zaten varsa önce temizle
+                let preview = statElement.querySelector('.preview-effect');
+                if (preview) {
+                    preview.remove();
+                }
+
+                // Yeni geçici etkiyi oluştur
+                preview = document.createElement('span');
+                preview.classList.add('preview-effect');
+                preview.textContent = (effectValue > 0 ? ` +${effectValue}` : ` ${effectValue}`);
+                preview.style.color = effectValue > 0 ? '#6FCF97' : '#EB5757';
+                preview.style.marginLeft = '5px';
+
+                statElement.appendChild(preview);
+            }
+        }
+    }
+
+    writeRequirements(direction) {
+        // Önce tüm eski requirement'ları temizle
+        this.reqsContainerElement.querySelectorAll('.req-element').forEach(el => el.remove());
+        const currentCard = this.getCurrentCardData();
+        const requirements = direction === "positive" ? currentCard.positive.requirements : currentCard.negative.requirements;
+
+        // Eğer hiç gereklilik yoksa direkt çık
+        if (Object.keys(requirements).length === 0 || direction != "positive" && direction != "negative"  ) return;
+
+        // Gereklilikleri yaz
+        for (const req in requirements) {
+            const reqValue = requirements[req];
+
+            const preview = document.createElement('span');
+            preview.classList.add('req-element');
+            preview.textContent = `${req.charAt(0).toUpperCase() + req.slice(1)}: ${reqValue}`;
+            preview.style.display = 'block'; 
+            this.reqsContainerElement.appendChild(preview);
+        }
+    }
+    
+    
+
 
     checkRequirements(requirements) {
         for (let key in requirements) {
@@ -152,9 +230,12 @@ class CardGame {
             } else {
                 console.log("Yeterli kaynağın yok, bu yöne kaydıramazsın.");
                 this.cardElement.style.transform = 'none';
+                this.cardContainerElement.style.backgroundColor = 'transparent';
+                this.writeRequirements("clear");
             }
         } else {
             this.cardElement.style.transform = 'none';
+
         }
     }
     
@@ -163,15 +244,17 @@ class CardGame {
         this.isDragging = false;
         this.cardElement.style.transform = 'none';
         this.cardElement.style.transition = 'transform 0.3s ease';
+        this.cardContainerElement.style.backgroundColor = 'transparent';
+        this.updateStatsDisplay();
+        this.writeRequirements("clear");
     }
 
     swipeCard(direction) {
-        console.log("Kaydırılan yön:", direction); // ← Geçici debugger
-
         const currentScene = this.getCurrentCardData();
 
         const effect = direction === 'right' ? currentScene.positive.effects : currentScene.negative.effects;
         this.applyEffects(effect);
+        this.cardContainerElement.style.backgroundColor = 'transparent';
 
         this.cardElement.classList.add(`swipe-${direction}`);
         
