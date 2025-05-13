@@ -1,4 +1,33 @@
 class CardGame {
+
+    stats = {
+        treasury: 5,
+        welfare: 5,
+        army: 5,
+        faith: 5,
+        diplomacy: 5
+    };
+    
+    updateStatsDisplay() {
+        document.getElementById("stat-treasury").textContent = this.stats.treasury;
+        document.getElementById("stat-welfare").textContent = this.stats.welfare;
+        document.getElementById("stat-army").textContent = this.stats.army;
+        document.getElementById("stat-faith").textContent = this.stats.faith;
+        document.getElementById("stat-diplomacy").textContent = this.stats.diplomacy;
+    }
+
+    
+    
+    applyEffects(effects) {
+        for (let key in effects) {
+            if (this.stats.hasOwnProperty(key)) {
+                this.stats[key] += effects[key];
+            }
+        }
+        this.updateStatsDisplay();
+    }
+    
+
     constructor() {
         this.currentCardIndex = 0;
         this.cardElement = document.getElementById('current-card');
@@ -10,6 +39,8 @@ class CardGame {
 
         this.loadCardData();  // Veriyi yüklemek için yeni bir metod ekliyoruz
         this.setupEventListeners();
+        this.updateStatsDisplay();
+        console.log(this.stats);
     }
 
     // JSON verisini yükle
@@ -23,6 +54,26 @@ class CardGame {
             .catch(error => {
                 console.error('Veri yüklenirken hata oluştu:', error);
             });
+    }
+
+    writeStatsToConsole(data) {
+        console.log("Pozitif Gereklilikler:");
+        for (let key in data.positive.requirements) {
+            console.log(`${key}: ${data.positive.requirements[key]}`);
+        }
+        console.log("Pozitif Efektler:");
+        for (let key in data.positive.effects) {
+            console.log(`${key}: ${data.positive.effects[key]}`);
+        }
+
+        console.log("Negatif Gereklilikler:");
+        for (let key in data.negative.requirements) {
+            console.log(`${key}: ${data.negative.requirements[key]}`);
+        }
+        console.log("Negatif Efektler:");
+        for (let key in data.negative.effects) {
+            console.log(`${key}: ${data.negative.effects[key]}`);
+        }
     }
 
     initializeCard() {
@@ -40,6 +91,7 @@ class CardGame {
         this.cardElement.querySelector('.image').src = data.image;
         this.cardElement.querySelector('.name').textContent = data.name;
         this.cardElement.querySelector('.text').textContent = data.text;
+        this.writeStatsToConsole(data);
     }
 
     setupEventListeners() {
@@ -74,20 +126,38 @@ class CardGame {
         this.cardElement.style.transform = `translateX(${deltaX}px) rotate(${deltaX * 0.1}deg)`;
     }
 
+    checkRequirements(requirements) {
+        for (let key in requirements) {
+            if (this.stats[key] === undefined || this.stats[key] < requirements[key]) {
+                return false;
+            }
+        }
+        return true;
+    }    
+
     handleDragEnd() {
         if (!this.isDragging) return;
         
         this.isDragging = false;
         this.cardElement.style.transition = 'transform 0.3s ease';
     
-        // Kartın hareket edip etmediğini kontrol et
         if (this.hasMoved && Math.abs(this.currentX) > 120) {
             const direction = this.currentX > 0 ? 'right' : 'left';
-            this.swipeCard(direction);
+    
+            const currentScene = this.getCurrentCardData();
+            const action = currentScene[direction === 'right' ? "positive" : "negative"];
+            
+            if (this.checkRequirements(action.requirements)) {
+                this.swipeCard(direction);
+            } else {
+                console.log("Yeterli kaynağın yok, bu yöne kaydıramazsın.");
+                this.cardElement.style.transform = 'none';
+            }
         } else {
             this.cardElement.style.transform = 'none';
-        }        
+        }
     }
+    
     
     handleDragCancel() {
         this.isDragging = false;
@@ -96,6 +166,13 @@ class CardGame {
     }
 
     swipeCard(direction) {
+        console.log("Kaydırılan yön:", direction); // ← Geçici debugger
+
+        const currentScene = this.getCurrentCardData();
+
+        const effect = direction === 'right' ? currentScene.positive.effects : currentScene.negative.effects;
+        this.applyEffects(effect);
+
         this.cardElement.classList.add(`swipe-${direction}`);
         
         setTimeout(() => {

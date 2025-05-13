@@ -1,22 +1,1112 @@
 [
     {
-        "image": "https://images.pexels.com/photos/127723/pexels-photo-127723.jpeg",
-        "name": "Star Card",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent neque elit, dictum id malesuada nec, sagittis sit amet ligula."
+      "id": 1,
+      "image": "images/card_1.png",
+      "name": "Vezir Osman",
+      "text": "Halk için bir festival düzenleyelim mi? Masraflı olacak ama moralleri yükselecek.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "welfare": 4
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": 1
+        }
+      }
     },
     {
-        "image": "",
-        "name": "Game Card",
-        "text": "Having fun?"
+      "id": 2,
+      "image": "images/card_2.png",
+      "name": "General Kadir",
+      "text": "Komşu krallık sınırda asker biriktiriyor. Ordumuzu güçlendirelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "welfare": -1
+        }
+      }
     },
     {
-        "image": "",
-        "name": "Art Card",
-        "text": "Express yourself!"
+      "id": 3,
+      "image": "images/card_3.png",
+      "name": "Başrahip Elif",
+      "text": "Yeni bir tapınak inşa etmek halkın inancını güçlendirir. Destekleyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "faith": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
     },
     {
-        "image": "",
-        "name": "Hot Card",
-        "text": "Catch It!"
+      "id": 4,
+      "image": "images/card_4.png",
+      "name": "Elçi Ayşe",
+      "text": "Komşu krallıkla ticaret anlaşması yapalım mı? Hazine dolacak ama bağımsızlık riski var.",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "treasury": 3,
+          "diplomacy": 2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -3,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/card_5.png",
+      "name": "Köylü Lideri Mehmet",
+      "text": "Vergileri düşürelim, halk rahatlasın. Ama hazine zarar görecek.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": 1
+        }
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/card_6.png",
+      "name": "Tüccar Hüseyin",
+      "text": "Yeni bir pazar yeri inşa edelim mi? Ticaret artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "treasury": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -1,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/card_7.png",
+      "name": "General Zeynep",
+      "text": "Sınır kalelerini güçlendirelim mi? Ordu güçlenir ama hazine azalır.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "diplomacy": -1
+        }
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/card_8.png",
+      "name": "Rahip Mustafa",
+      "text": "Halkın günahlarını affetmek için bir tören düzenleyelim mi?",
+      "positive": {
+        "requirements": {
+          "faith": 1
+        },
+        "effects": {
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 9,
+      "image": "images/card_9.png",
+      "name": "Elçi Selim",
+      "text": "Komşu krallığın kralına hediye gönderelim mi? İlişkiler iyileşir.",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "diplomacy": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 10,
+      "image": "images/card_10.png",
+      "name": "Köylü Fatma",
+      "text": "Kuraklık vurdu, halka yiyecek dağıtalım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -3,
+          "faith": -1
+        }
+      }
+    },
+    {
+      "id": 11,
+      "image": "images/card_11.png",
+      "name": "Vezir Ali",
+      "text": "Yeni bir vergi yasası çıkaralım mı? Hazine dolacak ama halk huzursuz.",
+      "positive": {
+        "requirements": {},
+        "effects": {
+          "treasury": 3,
+          "welfare": -2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": 1,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 12,
+      "image": "images/card_12.png",
+      "name": "General Emre",
+      "text": "Askerleri eğitmek için yeni bir kamp kuralım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 13,
+      "image": "images/card_13.png",
+      "name": "Rahibe Leyla",
+      "text": "Halkı birleştirmek için dini bir bayram düzenleyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 14,
+      "image": "images/card_14.png",
+      "name": "Elçi Can",
+      "text": "Komşu krallıkla barış antlaşması imzalayalım mı?",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 3,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "army": -1
+        }
+      }
+    },
+    {
+      "id": 15,
+      "image": "images/card_15.png",
+      "name": "Tüccar Zeynep",
+      "text": "Denizaşırı bir ticaret rotası açalım mı? Riskli ama kârlı.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "treasury": 4,
+          "diplomacy": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "treasury": -2,
+          "diplomacy": -1
+        }
+      }
+    },
+    {
+      "id": 16,
+      "image": "images/card_16.png",
+      "name": "Köylü Ahmet",
+      "text": "Yeni sulama kanalları inşa edelim mi? Tarım artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 17,
+      "image": "images/card_17.png",
+      "name": "General Burak",
+      "text": "Düşman casuslarını yakalamak için orduya kaynak ayıralım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "army": 2,
+          "diplomacy": -1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "diplomacy": -2
+        }
+      }
+    },
+    {
+      "id": 18,
+      "image": "images/card_18.png",
+      "name": "Rahip İsmail",
+      "text": "Kutsal bir emaneti korumak için bir manastır inşa edelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "faith": 3,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 19,
+      "image": "images/card_19.png",
+      "name": "Elçi Nur",
+      "text": "Komşu krallıkla ortak bir festival düzenleyelim mi? İlişkiler iyileşir.",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "diplomacy": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 20,
+      "image": "images/card_20.png",
+      "name": "Tüccar Ece",
+      "text": "Liman inşa edelim mi? Ticaret artar ama çevre zarar görebilir.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "treasury": 2,
+          "diplomacy": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -1,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 21,
+      "image": "images/card_21.png",
+      "name": "Köylü Hatice",
+      "text": "Halkın borçlarını silelim mi? Mutluluk artar ama hazine azalır.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": 1
+        }
+      }
+    },
+    {
+      "id": 22,
+      "image": "images/card_22.png",
+      "name": "Vezir Seda",
+      "text": "Yeni bir kale inşa edelim mi? Savunma artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 23,
+      "image": "images/card_23.png",
+      "name": "Rahibe Meryem",
+      "text": "Halkı eğitmek için dini okullar açalım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 24,
+      "image": "images/card_24.png",
+      "name": "Elçi Kerem",
+      "text": "Komşu krallıkla ittifak önerelim mi? Ama ordumuz zayıflayabilir.",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 3,
+          "army": -1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "army": -1
+        }
+      }
+    },
+    {
+      "id": 25,
+      "image": "images/card_25.png",
+      "name": "General Hakan",
+      "text": "Sınırda bir isyan çıktı. Asker gönderelim mi?",
+      "positive": {
+        "requirements": {
+          "army": 2
+        },
+        "effects": {
+          "army": -2,
+          "welfare": 2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -3,
+          "army": -1
+        }
+      }
+    },
+    {
+      "id": 26,
+      "image": "images/card_26.png",
+      "name": "Tüccar Deniz",
+      "text": "Yeni bir maden açalım mı? Hazine artar ama halk rahatsız.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "treasury": 3,
+          "welfare": -1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 27,
+      "image": "images/card_27.png",
+      "name": "Köylü Ayhan",
+      "text": "Halk için ücretsiz sağlık hizmeti başlatalım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 28,
+      "image": "images/card_28.png",
+      "name": "Rahip Ömer",
+      "text": "Kutsal bir hac düzenleyelim mi? İnanç artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 29,
+      "image": "images/card_29.png",
+      "name": "Elçi Aslı",
+      "text": "Komşu krallıkla ortak bir ordu eğitimi yapalım mı?",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 2,
+          "army": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "army": -1
+        }
+      }
+    },
+    {
+      "id": 30,
+      "image": "images/card_30.png",
+      "name": "Vezir Mert",
+      "text": "Hazineyi artırmak için köylülere ek vergi koyalım mı?",
+      "positive": {
+        "requirements": {},
+        "effects": {
+          "treasury": 3,
+          "welfare": -2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": 1,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 31,
+      "image": "images/card_31.png",
+      "name": "General Elif",
+      "text": "Yeni bir silah atölyesi kuralım mı? Ordu güçlenir ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 32,
+      "image": "images/card_32.png",
+      "name": "Rahibe Zehra",
+      "text": "Halkı birleştirmek için büyük bir dini tören düzenleyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 33,
+      "image": "images/card_33.png",
+      "name": "Elçi Bora",
+      "text": "Komşu krallığa elçi gönderelim mi? İlişkiler iyileşir ama riskli.",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "diplomacy": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 34,
+      "image": "images/card_34.png",
+      "name": "Tüccar Selin",
+      "text": "Yeni bir ticaret yolu açalım mı? Hazine artar ama orduya yük bindirir.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "treasury": 3,
+          "army": -1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "treasury": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 35,
+      "image": "images/card_35.png",
+      "name": "Köylü İbrahim",
+      "text": "Halk için yeni evler inşa edelim mi? Refah artar ama hazine azalır.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 36,
+      "image": "images/card_36.png",
+      "name": "General Cenk",
+      "text": "Sınırda yeni bir gözetleme kulesi inşa edelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "army": 2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "diplomacy": -1
+        }
+      }
+    },
+    {
+      "id": 37,
+      "image": "images/card_37.png",
+      "name": "Rahip Yunus",
+      "text": "Halkın inancını güçlendirmek için kutsal bir festival düzenleyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 38,
+      "image": "images/card_38.png",
+      "name": "Elçi Esra",
+      "text": "Komşu krallıkla ortak bir pazar kuralım mı?",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 2,
+          "treasury": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 39,
+      "image": "images/card_39.png",
+      "name": "Tüccar Onur",
+      "text": "Yeni bir gemi filosu inşa edelim mi? Ticaret artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "treasury": 2,
+          "diplomacy": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "treasury": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 40,
+      "image": "images/card_40.png",
+      "name": "Köylü Şerife",
+      "text": "Halk için ücretsiz ekmek dağıtalım mı?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "welfare": 2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 41,
+      "image": "images/card_41.png",
+      "name": "Vezir Tolga",
+      "text": "Hazineyi artırmak için yeni bir vergi sistemi kuralım mı?",
+      "positive": {
+        "requirements": {},
+        "effects": {
+          "treasury": 3,
+          "welfare": -2
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": 1,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 42,
+      "image": "images/card_42.png",
+      "name": "General Ebru",
+      "text": "Ordunun maaşlarını artıralım mı? Sadakat artar ama hazine azalır.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 43,
+      "image": "images/card_43.png",
+      "name": "Rahip Faruk",
+      "text": "Halkın inancını güçlendirmek için kutsal bir emanet sergileyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 44,
+      "image": "images/card_44.png",
+      "name": "Elçi Melis",
+      "text": "Komşu krallıkla ortak bir savunma paktı imzalayalım mı?",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 3,
+          "army": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "army": -1
+        }
+      }
+    },
+    {
+      "id": 45,
+      "image": "images/card_45.png",
+      "name": "Tüccar Kaan",
+      "text": "Yeni bir köprü inşa edelim mi? Ticaret artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "treasury": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "treasury": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 46,
+      "image": "images/card_46.png",
+      "name": "Köylü Sevim",
+      "text": "Halk için yeni bir okul açalım mı? Refah artar ama hazine azalır.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "welfare": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "welfare": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 47,
+      "image": "images/card_47.png",
+      "name": "General Arda",
+      "text": "Sınırda yeni bir kale inşa edelim mi? Savunma artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 3
+        },
+        "effects": {
+          "treasury": -3,
+          "army": 3
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "army": -1,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 48,
+      "image": "images/card_48.png",
+      "name": "Rahibe Naber",
+      "text": "Halkı birleştirmek için büyük bir dini festival düzenleyelim mi?",
+      "positive": {
+        "requirements": {
+          "treasury": 1
+        },
+        "effects": {
+          "treasury": -1,
+          "faith": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "faith": -2,
+          "welfare": -1
+        }
+      }
+    },
+    {
+      "id": 49,
+      "image": "images/card_49.png",
+      "name": "Elçi Umut",
+      "text": "Komşu krallıkla ortak bir ticaret anlaşması imzalayalım mı?",
+      "positive": {
+        "requirements": {
+          "diplomacy": 1
+        },
+        "effects": {
+          "diplomacy": 2,
+          "treasury": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "diplomacy": -2,
+          "treasury": -1
+        }
+      }
+    },
+    {
+      "id": 50,
+      "image": "images/card_50.png",
+      "name": "Tüccar Buse",
+      "text": "Yeni bir pazar yeri inşa edelim mi? Ticaret artar ama masraflı.",
+      "positive": {
+        "requirements": {
+          "treasury": 2
+        },
+        "effects": {
+          "treasury": -2,
+          "treasury": 2,
+          "welfare": 1
+        }
+      },
+      "negative": {
+        "requirements": {},
+        "effects": {
+          "treasury": -1,
+          "welfare": -1
+        }
+      }
     }
 ]

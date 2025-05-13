@@ -8,34 +8,63 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f2f5;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    min-height: 100vh;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
+    align-items: center; /* Yatayda ortalar */
+    justify-content: center; /* İsteğe bağlı: Dikeyde ortalar */
+    height: 100vh; /* Sayfayı kaplaması için */
+  }
+  
+
+  #stats {
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    display: flex;
     justify-content: center;
-}
+    gap: 40px;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Arka planı yarı saydam yapar */
+    border-bottom: 2px solid #444;
+    font-family: 'Pirata One', cursive; /* Korsan temalı bir yazı tipi */
+    color: #f0e68c; /* Altın sarısı tonları */
+    font-size: 1.4rem;
+  }
+  
+  #stats p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  @media (max-width: 600px) {
+    #stats {
+        gap: 20px;
+      align-items: center;
+      font-size: 0.8rem;
+      padding: 10px 0px;
+    }
+  }
+  
 
 /* Card styles */
 #card-container {
     position: relative;
-    height: 450px;
-    perspective: 1000px;
-    width: min(80vw, 300px); /* max genişlik 300px, mobilde %80 */
-
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card {
+    width: min(80vw, 300px); /* max genişlik 300px, mobilde %80 */
     aspect-ratio: 2 / 3;
     position: absolute;
-    width: 100%;
     background: white;
     border-radius: min(5vw, 30px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
